@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/la_survey"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/black"
+
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/la_survey"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/black">
 
 
     <LinearLayout
@@ -18,6 +26,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:text=" 1. 당신의 이름을 입력하세요."/>            />
@@ -26,18 +35,62 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:textColor="@color/white"
-            android:text="        what is your name?"/>
+            android:text="        What is your name?"/>
 
         <EditText
+            android:id="@+id/sur_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:layout_marginLeft="30dp"
             android:textColorHint="@color/white"
             android:background="#4A4949"
+            android:textColor="@color/white"
             android:hint="ex)홍길동(Kevin)"/>
 
     </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text=" 2. 당신의 성별은?"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:text="        What is your sex?"/>
+            <RadioGroup
+                android:id="@+id/sur_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/sur_sex1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="@color/white"
+                    android:text="남자(Man)"/>
+
+
+                <RadioButton
+                    android:id="@+id/sur_sex2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="여자(Woman)"/>
+
+            </RadioGroup>
+        </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text=" 2. 당신의 나이를 입력하세요."
+            android:text=" 3. 당신의 나이를 입력하세요."
             android:textColor="@color/white"/>
         <TextView
             android:layout_width="match_parent"
@@ -58,13 +111,262 @@
             android:text="        How old are you?"/>
 
         <EditText
+            android:id="@+id/sur_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:layout_marginLeft="30dp"
             android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:background="#4A4949"
             android:hint="ex)20"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text=" 4. 당신의 키와 몸무게를 입력하세요."
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:text="        What is your height and weight??"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <EditText
+                android:id="@+id/sur_hei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:background="#4A4949"
+                android:hint="ex)175"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:background="#4A4949"
+                    android:text="cm"/>
+
+            <EditText
+                android:id="@+id/sur_wei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:background="#4A4949"
+                android:hint="ex)75"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:background="#4A4949"
+                    android:text="kg"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text=" 5. 하루에 담배를 얼마나 피우시나요?"/>            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="        How many cigarettes do you smoke per day?"/>
+        <RadioGroup
+            android:id="@+id/sur_cig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/sur_cig1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/white"
+                android:text="반갑 이하"/>
+
+
+            <RadioButton
+                android:id="@+id/sur_cig2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="반갑~한감"/>
+
+
+            <RadioButton
+                android:id="@+id/sur_cig3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="한갑 이상"/>
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text=" 6. 하루에 잠을 얼마나 주무시나요?"/>            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="        How much time do you sleep per day?"/>
+        <RadioGroup
+            android:id="@+id/sur_sle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/sur_sle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/white"
+                android:text="4시간 이하"/>
+
+
+            <RadioButton
+                android:id="@+id/sur_sle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="4~8시간"/>
+
+
+            <RadioButton
+                android:id="@+id/sur_sle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="8시간 이상"/>
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text=" 7. 일주일에 운동을 얼마나 하시나요?&#10;
+    (1시간 이상)"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="        how much do you exercise per week?"/>
+        <RadioGroup
+            android:id="@+id/sur_exc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/sur_exc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/white"
+                android:text="3일 이하"/>
+
+
+            <RadioButton
+                android:id="@+id/sur_exc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="3일~5일"/>
+
+
+            <RadioButton
+                android:id="@+id/sur_exc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="5일 이상"/>
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text=" 8. 평소 음식을 짜거나 맵게 드시나요?"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="        Do you usually eat salty or spicy food?"/>
+
+        <RatingBar
+            android:id="@+id/sur_foo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="3"
+            android:stepSize="0.5"
+            android:progressTint="@color/white"
+            android:progressBackgroundTint="#4C4C4C"
+            android:max="5"/>
 
     </LinearLayout>
 
@@ -78,54 +380,51 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:text=" 3. 하루에 담배를 얼마나 피우시나요?"/>            />
+            android:text=" 9. 부모님 혹은 조부모님 중 당뇨병, 암이나 &#10;
+    심장질환이 있습니까?"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:text="        how many cigarettes do you smoke?"/>
-        <LinearLayout
+            android:text="        Do any of your parents or grandparents have &#10;
+        diabetes or cancer or heart disease?"/>
+        <RadioGroup
+            android:id="@+id/sur_des"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/sur_des1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:textColor="@color/white"
-                android:text="반갑 이하"/>
+                android:text="네(Yes)"/>
 
 
             <RadioButton
+                android:id="@+id/sur_des2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="반갑~한감"/>
+                android:text="아니요(No)"/>
 
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="한갑 이상"/>
-
-        </LinearLayout>
-
-
+        </RadioGroup>
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:background="@drawable/shape"
+        android:background="@drawable/shape_done"
         android:gravity="center"
         android:text="완료(done)"
         android:textColor="@color/white" />
 
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

@@ -9,10 +9,31 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/black"
+        android:id="@+id/btn_menu"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/menu"
+        />
+
+
+    <TextView
+        android:id="@+id/tx_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:text="당신은"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
@@ -21,7 +42,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:layout_marginTop="40dp"
             android:layout_marginLeft="40dp"
             android:textColor="@color/white"
             android:textSize="35sp" />
@@ -31,7 +51,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginTop="40dp"
             android:layout_gravity="center"
             android:textColor="@color/white"
             android:textSize="35sp"/>
@@ -41,7 +60,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginTop="40dp"
             android:layout_marginRight="40dp"
             android:layout_gravity="center"
             android:textColor="@color/white"
@@ -66,7 +84,7 @@
 
 
         <TextView
-            android:id="@+id/tx_mi" 
+            android:id="@+id/tx_mi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -85,5 +103,15 @@
             android:textSize="35sp" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:gravity="right"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:text="남으셨습니다..."/>
 
 </LinearLayout>

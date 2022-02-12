@@ -2,9 +2,11 @@ package com.example.controllinglifespanv3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.controllinglifespanv3.R;
@@ -14,7 +16,8 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    long whole_Life=100; //년 단위 (+ remaining_Life도 년 단위)
+    String name, sex, age_;
+    long whole_Life=83; //년 단위 (+ remaining_Life도 년 단위)
     long age=20;
     long remaining_Life, year, month, day, hour, minute, second;
     long rem;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     long div_day = div_hour * 24;
     long div_mo = div_day * 31;
     long div_y = div_day * 365;
+    TextView text_name;
     TextView text_y, text_mo, text_d, text_h, text_mi, text_s;
     Handler handler = new Handler();
 
@@ -32,12 +36,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+        Intent intent = getIntent();
+
+        name = intent.getStringExtra("name");
+        sex = intent.getStringExtra("sex");
+        age_ = intent.getStringExtra("age");
+        age = Long.parseLong(age_);
+
+        text_name = (TextView)findViewById(R.id.tx_name);
+
+        text_name.setText(name+"님은");
+
         text_y = (TextView)findViewById(R.id.tx_y);
         text_mo = (TextView)findViewById(R.id.tx_mo);
         text_d = (TextView)findViewById(R.id.tx_d);
         text_h = (TextView)findViewById(R.id.tx_h);
         text_mi = (TextView)findViewById(R.id.tx_mi);
         text_s = (TextView)findViewById(R.id.tx_s);
+
+        if(sex == "남자") {
+            whole_Life = 80;
+        }else whole_Life = 86;
 
         remaining_Life = (whole_Life - age)*365*24*60*60;
 
