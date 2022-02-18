@@ -216,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:textColor="@color/white"
-                android:text="반갑 이하"/>
+                android:text="한갑 이하"/>
 
 
             <RadioButton
@@ -224,7 +224,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="반갑~한감"/>
+                android:text="한갑~두갑"/>
 
 
             <RadioButton
@@ -232,7 +232,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="한갑 이상"/>
+                android:text="두갑 이상"/>
 
         </RadioGroup>
     </LinearLayout>
@@ -266,7 +266,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:textColor="@color/white"
-                android:text="4시간 이하"/>
+                android:text="6시간 이하"/>
 
 
             <RadioButton
@@ -274,7 +274,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="4~8시간"/>
+                android:text="6~8시간"/>
 
 
             <RadioButton
@@ -298,7 +298,7 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:text=" 7. 일주일에 운동을 얼마나 하시나요?&#10;
-    (1시간 이상)"/>
+    (45분 이상)"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -325,7 +325,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="3일~5일"/>
+                android:text="3~5일"/>
 
 
             <RadioButton
@@ -334,6 +334,13 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:text="5일 이상"/>
+
+            <RadioButton
+                android:id="@+id/sur_exc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="안함"/>
 
         </RadioGroup>
     </LinearLayout>
@@ -390,13 +397,13 @@
             android:text="        Do any of your parents or grandparents have &#10;
         diabetes or cancer or heart disease?"/>
         <RadioGroup
-            android:id="@+id/sur_des"
+            android:id="@+id/sur_dis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/sur_des1"
+                android:id="@+id/sur_dis1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -405,7 +412,7 @@
 
 
             <RadioButton
-                android:id="@+id/sur_des2"
+                android:id="@+id/sur_dis2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"

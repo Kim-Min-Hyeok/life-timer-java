@@ -16,7 +16,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    String name, sex, age_;
+    String name, sex, age_, cigarette, sleep, exercise, disease;
     long whole_Life=83; //년 단위 (+ remaining_Life도 년 단위)
     long age=20;
     long remaining_Life, year, month, day, hour, minute, second;
@@ -43,7 +43,40 @@ public class MainActivity extends AppCompatActivity {
         name = intent.getStringExtra("name");
         sex = intent.getStringExtra("sex");
         age_ = intent.getStringExtra("age");
+        cigarette = intent.getStringExtra("cigarette");
+        sleep = intent.getStringExtra("sleep");
+        exercise = intent.getStringExtra("exercise");
+        disease = intent.getStringExtra("disease");
+
+        if(sex=="남자"){
+            whole_Life = 80;
+        }else whole_Life = 86;
+        //성별 intent
         age = Long.parseLong(age_);
+        //나이 intent
+        if(cigarette=="한값 이하"){
+            whole_Life = whole_Life - 3;
+        }else if(cigarette=="두갑 이상"){
+            whole_Life = whole_Life -10;
+        }else whole_Life = whole_Life -5;
+        //담배 intent
+        if(sleep=="6~8시간"){
+            whole_Life = whole_Life +5;
+        }else whole_Life = whole_Life -5;
+        //수면 intent
+        if(exercise=="3일 이하"){
+            whole_Life = whole_Life +1;
+        }else if(exercise=="3~5일"){
+            whole_Life = whole_Life +2;
+        }else if(exercise=="5일 이상"){
+            whole_Life = whole_Life +4;
+        }else whole_Life = whole_Life -2;
+        //운동 intent
+        if(disease=="아니요(No)"){
+            whole_Life = whole_Life -5;
+        }
+
+
 
         text_name = (TextView)findViewById(R.id.tx_name);
 
@@ -56,26 +89,7 @@ public class MainActivity extends AppCompatActivity {
         text_mi = (TextView)findViewById(R.id.tx_mi);
         text_s = (TextView)findViewById(R.id.tx_s);
 
-        if(sex == "남자") {
-            whole_Life = 80;
-        }else whole_Life = 86;
-
-        remaining_Life = (whole_Life - age)*365*24*60*60;
-
-        year = remaining_Life / div_y;
-        rem = remaining_Life % div_y;
-
-        month = rem / div_mo;
-        rem = rem % div_mo;
-
-        day = rem / div_day;
-        rem = rem % div_day;
-
-        hour = rem / div_hour;
-        rem = rem % div_hour;
-
-        minute = rem / div_min;
-        second = rem % div_min;
+        setTimer();
 
         text_y.setText(Long.toString(year)+"년");
         text_mo.setText(Long.toString(month)+"개월");
@@ -88,50 +102,7 @@ public class MainActivity extends AppCompatActivity {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                if (second != 0) {
-                    --second;
-                } else if (minute != 0) {
-                    second = 60;
-                    --second;
-                    --minute;
-                } else if (hour != 0) {
-                    second = 60;
-                    minute = 60;
-                    --second;
-                    --minute;
-                    --hour;
-                } else if (day != 0) {
-                    second = 60;
-                    minute = 60;
-                    hour = 24;
-                    --second;
-                    --minute;
-                    --hour;
-                    --day;
-                } else if (month != 0) {
-                    second = 60;
-                    minute = 60;
-                    hour = 24;
-                    day = 31;
-                    --second;
-                    --minute;
-                    --hour;
-                    --day;
-                    --month;
-                } else if (year != 0) {
-                    second = 60;
-                    minute = 60;
-                    hour = 24;
-                    day = 31;
-                    month = 12;
-                    --second;
-                    --minute;
-                    --hour;
-                    --day;
-                    --month;
-                    --year;
-                }
-
+                updateTimer();
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -149,6 +120,72 @@ public class MainActivity extends AppCompatActivity {
         };
         timer.schedule(task,1000,1000);
 
+
+    }
+
+    public void setTimer(){
+        remaining_Life = (whole_Life - age)*365*24*60*60;
+
+        year = remaining_Life / div_y;
+        rem = remaining_Life % div_y;
+
+        month = rem / div_mo;
+        rem = rem % div_mo;
+
+        day = rem / div_day;
+        rem = rem % div_day;
+
+        hour = rem / div_hour;
+        rem = rem % div_hour;
+
+        minute = rem / div_min;
+        second = rem % div_min;
+    }
+
+    public void updateTimer(){
+        if (second != 0) {
+            --second;
+        } else if (minute != 0) {
+            second = 60;
+            --second;
+            --minute;
+        } else if (hour != 0) {
+            second = 60;
+            minute = 60;
+            --second;
+            --minute;
+            --hour;
+        } else if (day != 0) {
+            second = 60;
+            minute = 60;
+            hour = 24;
+            --second;
+            --minute;
+            --hour;
+            --day;
+        } else if (month != 0) {
+            second = 60;
+            minute = 60;
+            hour = 24;
+            day = 31;
+            --second;
+            --minute;
+            --hour;
+            --day;
+            --month;
+        } else if (year != 0) {
+            second = 60;
+            minute = 60;
+            hour = 24;
+            day = 31;
+            month = 12;
+            --second;
+            --minute;
+            --hour;
+            --day;
+            --month;
+            --year;
+        }
 
     }
 }

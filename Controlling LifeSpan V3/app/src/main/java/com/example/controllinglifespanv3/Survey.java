@@ -15,7 +15,7 @@ import com.example.controllinglifespanv3.R;
 public class Survey extends AppCompatActivity {
 
     public static final int done = 1001;
-    String sex;
+    String sex,cigarette,sleep,exercise,disease;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,17 @@ public class Survey extends AppCompatActivity {
                             case R.id.sur_sex:
                                 sex = ((RadioButton) findViewById(i)).getText().toString();
                                 break;
+                            case R.id.sur_cig:
+                                cigarette = ((RadioButton) findViewById(i)).getText().toString();
+                                break;
+                            case R.id.sur_sle:
+                                sleep = ((RadioButton) findViewById(i)).getText().toString();
+                                break;
+                            case R.id.sur_exc:
+                                exercise = ((RadioButton) findViewById(i)).getText().toString();
+                                break;
+                            case R.id.sur_dis:
+                                disease = ((RadioButton) findViewById(i)).getText().toString();
                         }
                     }
                 };
@@ -47,6 +58,11 @@ public class Survey extends AppCompatActivity {
                 intent.putExtra("name", ed_name.getText().toString());
                 intent.putExtra("sex", sex);
                 intent.putExtra("age", ed_age.getText().toString());
+                intent.putExtra("cigarette", cigarette);
+                intent.putExtra("sleep", sleep);
+                intent.putExtra("exercise", exercise);
+
+                intent.putExtra("disease", disease);
 
                 startActivity(intent);
             }
