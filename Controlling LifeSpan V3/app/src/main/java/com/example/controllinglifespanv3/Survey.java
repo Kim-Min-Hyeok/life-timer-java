@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 
 import com.example.controllinglifespanv3.MainActivity;
 import com.example.controllinglifespanv3.R;
@@ -16,6 +17,7 @@ public class Survey extends AppCompatActivity {
 
     public static final int done = 1001;
     String sex,cigarette,sleep,exercise,disease;
+    float food;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,9 @@ public class Survey extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.btn_done);
         EditText ed_name = (EditText) findViewById(R.id.sur_name);
         EditText ed_age = (EditText) findViewById(R.id.sur_age);
+        EditText ed_height = (EditText) findViewById(R.id.sur_hei);
+        EditText ed_weight = (EditText) findViewById(R.id.sur_wei);
+        RatingBar rating_food = (RatingBar) findViewById(R.id.sur_foo);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,9 +63,14 @@ public class Survey extends AppCompatActivity {
                 intent.putExtra("name", ed_name.getText().toString());
                 intent.putExtra("sex", sex);
                 intent.putExtra("age", ed_age.getText().toString());
+                intent.putExtra("height", ed_height.getText().toString());
+                intent.putExtra("weight", ed_weight.getText().toString());
                 intent.putExtra("cigarette", cigarette);
                 intent.putExtra("sleep", sleep);
                 intent.putExtra("exercise", exercise);
+
+                food = rating_food.getRating();
+                intent.putExtra("food", food);
 
                 intent.putExtra("disease", disease);
 

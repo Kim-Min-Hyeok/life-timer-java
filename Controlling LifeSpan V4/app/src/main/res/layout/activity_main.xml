@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--parent layout-->
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/la_main"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="lifespan.controllinglifespanv3.MainActivity">
+<!--main layout-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/btn_menu"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:background="#00000000"
+        android:src="@drawable/menu"/>
+
+
+    <TextView
+        android:id="@+id/tx_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:text="당신은"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tx_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_marginLeft="40dp"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/tx_mo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="35sp"/>
+
+        <TextView
+            android:id="@+id/tx_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="40dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="35sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tx_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+
+        <TextView
+            android:id="@+id/tx_mi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/tx_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:gravity="right"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:text="남으셨습니다..."/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3686592522565954/8071731402">
+        </com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+    <include layout="@layout/menu"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
